@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-        CustomAdapter adapter = new CustomAdapter(new ArrayList<>());
+        CustomAdapter adapter = new CustomAdapter(new ArrayList<>(), MainActivity.this);
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
