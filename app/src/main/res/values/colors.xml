@@ -9,5 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="main_activity_background">#FF393E46</color>
     <color name="edit_text_background">#FFEEEEEE</color>
-    <color name="add_button_background">#FF00ADB5</color>
+    <color name="button_background">#FF00ADB5</color>
+    <color name="text_view_background">#FF222831</color>
 </resources>
