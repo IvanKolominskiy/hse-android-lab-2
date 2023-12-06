@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class CustomAdapter extends RecyclerView.Adapter<MyViewHolder> {
+public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
 
     private final ArrayList<String> dataSet;
     private final Activity context;
@@ -27,13 +28,13 @@ public class CustomAdapter extends RecyclerView.Adapter<MyViewHolder> {
     }
 
     @NonNull
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int ViewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int ViewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_row,
                 parent, false);
-        return new MyViewHolder(view);
+        return new ViewHolder(view);
     }
 
-    public void onBindViewHolder(@NonNull MyViewHolder vh, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder vh, int position) {
         vh.getTextView().setText(dataSet.get(position));
 
         vh.getDeleteButton().setOnClickListener(v -> deleteProduct(position));
@@ -80,5 +81,34 @@ public class CustomAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public void deleteProduct(int position) {
         dataSet.remove(position);
         notifyDataSetChanged();
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+
+        private final TextView textView;
+
+        private final Button editButton;
+
+        private final Button deleteButton;
+
+        public ViewHolder(View v) {
+            super(v);
+
+            textView = v.findViewById(R.id.text_view);
+            editButton = v.findViewById(R.id.edit_button);
+            deleteButton = v.findViewById(R.id.delete_button);
+        }
+
+        public TextView getTextView() {
+            return textView;
+        }
+
+        public Button getEditButton() {
+            return editButton;
+        }
+
+        public Button getDeleteButton() {
+            return deleteButton;
+        }
     }
 }
