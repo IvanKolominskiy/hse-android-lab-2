@@ -4,4 +4,6 @@
     <string name="add_button">Add</string>
     <string name="edit_button">Edit</string>
     <string name="delete_button">Delete</string>
+    <string name="update_text_hint">Enter the product</string>
+    <string name="update_button">Update</string>
 </resources>

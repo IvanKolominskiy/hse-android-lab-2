@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="8dp"
+    android:padding="10dp"
+    android:background="@color/dialog_background">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/update_text"
+        android:hint="@string/update_text_hint"
+        android:padding="12dp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:inputType="text" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/update_button"
+        app:layout_constraintTop_toBottomOf="@id/update_text"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button"
+        android:text="@string/update_button"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
