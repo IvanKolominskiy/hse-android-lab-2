@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
+public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
 
     private final ArrayList<String> dataSet;
     private final Activity context;
@@ -60,7 +60,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         });
     }
 
-    public CustomAdapter(ArrayList<String> dataSet, Activity context) {
+    public ProductAdapter(ArrayList<String> dataSet, Activity context) {
         this.dataSet = dataSet;
         this.context = context;
     }
